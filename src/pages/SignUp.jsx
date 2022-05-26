@@ -51,7 +51,9 @@ function SignUp() {
       toast.success('Welcome');
       navigate('/');
     } catch (error) {
-      toast.error('Something went wrong :(');
+      console.log(error.code);
+      const message = error.code.substring(5);
+      toast.error(message);
     }
   };
 
